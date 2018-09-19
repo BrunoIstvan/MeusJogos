@@ -16,6 +16,20 @@ class ListaJogosActivity : AppCompatActivity() {
         rvMeusJogos.adapter = JogoAdapter(this, jogos(), { jogo ->
             Toast.makeText(this, "Jogo clicado: ${jogo.titulo}", Toast.LENGTH_LONG).show()
         })
+
+        //Grid
+        //val layoutManager = GridLayoutManager(this, 2)
+        //Grade escalonável
+        /*
+        val layoutManager = StaggeredGridLayoutManager(
+                        2, StaggeredGridLayoutManager.VERTICAL)
+        */
+        //Lista na horizontal
+        /*
+        val layoutManager = LinearLayoutManager(this,
+            LinearLayoutManager.HORIZONTAL, false)
+        */
+
         val layoutManager = LinearLayoutManager(this)
         rvMeusJogos.layoutManager = layoutManager
     }
