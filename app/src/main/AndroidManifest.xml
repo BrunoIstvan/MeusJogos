@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DetalheJogoActivity"
+            android:parentActivityName=".ListaJogosActivity" />
+        <activity
+            android:name=".DetalheActivity"
+            android:label="@string/title_activity_detalhe"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

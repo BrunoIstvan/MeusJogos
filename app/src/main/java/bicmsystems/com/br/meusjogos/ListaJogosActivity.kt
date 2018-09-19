@@ -1,5 +1,6 @@
 package bicmsystems.com.br.meusjogos
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -14,7 +15,21 @@ class ListaJogosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_jogos)
         rvMeusJogos.adapter = JogoAdapter(this, jogos(), { jogo ->
-            Toast.makeText(this, "Jogo clicado: ${jogo.titulo}", Toast.LENGTH_LONG).show()
+
+            //Toast.makeText(this, "Jogo clicado: ${jogo.titulo}", Toast.LENGTH_LONG).show()
+
+            //val intent = Intent(this@ListaJogosActivity, DetalheJogoActivity::class.java)
+            val intent = Intent(this@ListaJogosActivity, DetalheActivity::class.java)
+            //val intent = Intent(this@ListaJogosActivity, DetalheJogoActivity::class.java)
+            //intent.putExtra("TITULO", jogo.titulo)
+            //intent.putExtra("RESOURCEID", jogo.resourceId)
+            //intent.putExtra("ANOLANCAMENTO", jogo.anoLancamento)
+            //intent.putExtra("DESCRICAO", jogo.descricao)
+
+            intent.putExtra("JOGO", jogo)
+
+            startActivity(intent)
+
         })
 
         //Grid
@@ -69,7 +84,32 @@ class ListaJogosActivity : AppCompatActivity() {
                 Jogo(R.drawable.uncharted_3,
                         "Uncharted 3 - Drake's Deception",
                         2014,
-                        "Jogo Nota 10")
+                        "Jogo Nota 10"),
+                Jogo(R.drawable.call_of_duty_ghosts,
+                        "Call of Duty - Ghosts",
+                        2014,
+                        "Jogo Nota 9"),
+                Jogo(R.drawable.killzone_2,
+                        "Killzone 2",
+                        2010,
+                        "Jogo Nota 8"),
+                Jogo(R.drawable.killzone_3,
+                        "Killzone 3",
+                        2014,
+                        "Jogo Nota 10"),
+                Jogo(R.drawable.god_of_war3,
+                        "God of War 3",
+                        2011,
+                        "Jogo Nota 9"),
+                Jogo(R.drawable.mortal_kombat_x,
+                        "Mortal Kombat",
+                        2013,
+                        "A jogar"),
+                Jogo(R.drawable.darkness_2,
+                        "Darkness 2",
+                        2014,
+                        "A jogar")
+
 
         )
 
